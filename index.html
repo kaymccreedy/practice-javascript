@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Javascript!</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>Highcharts.theme = {
+        colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+                '#FF9655', '#FFF263', '#6AF9C4'],
+        chart: {
+            backgroundColor: {
+                linearGradient: [0, 0, 500, 500],
+                stops: [
+                    [0, 'rgb(255, 255, 255)'],
+                    [1, 'rgb(240, 240, 255)']
+                ]
+            },
+        },
+        title: {
+            style: {
+                color: '#000',
+                font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+            }
+        },
+        subtitle: {
+            style: {
+                color: '#666666',
+                font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
+            }
+        },
+        legend: {
+            itemStyle: {
+                font: '9pt Trebuchet MS, Verdana, sans-serif',
+                color: 'black'
+            },
+            itemHoverStyle:{
+                color: 'gray'
+            }
+        }
+    };
+    </script>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+    Highcharts.setOptions(Highcharts.theme);
+    const chart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        
+        title: {
+            text: 'Populations of Philadelphia Neighborhoods'
+        },
+        xAxis: {
+            categories: ['Cobbs Creek', 'Fishtown', 'Graduate Hospital', 'Grays Ferry', 'Mt. Airy East', 'Mt. Airy West', 'Point Breeze', 'University City']
+        },
+        yAxis: {
+            title: {
+                text: 'Population & Population Density'
+            }
+        },
+        series: [{
+            name: 'Total Population',
+            data: [33370, 16310, 11230, 14840, 18520, 12640, 16980, 17580]
+        }, {
+            name: 'People per Square Mile',
+            data: [24920, 16270, 22530, 14120, 12040, 6540, 27900, 13770]
+        }]
+    });
+});
+  </script>
+</head>
+<body>
+  <div id="container" style="width:100%; height:1200px;"></div>
+  
+</body>
+</html>
